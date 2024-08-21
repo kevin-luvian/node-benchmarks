@@ -1,0 +1,33 @@
+version: '3'
+services:
+  resource-gen:
+    container_name: resource-gen
+    image: resource-gen-img
+    build:
+      context: ./resource-gen
+    volumes:
+      - ./output:/usr/src/output
+  stream-backpressure:
+    mem_limit: 256m
+    build:
+      context: .
+      dockerfile: Dockerfile.streamBackpressure
+    volumes:
+      - ./output:/usr/src/output
+  basic-stream:
+    mem_limit: 512m
+    build:
+      context: .
+      dockerfile: Dockerfile.basicStream
+    volumes:
+      - ./output:/usr/src/output
+  concurrent-stream:
+    mem_limit: 512m
+    build:
+      context: .
+      dockerfile: Dockerfile.concurrentStream
+    volumes:
+      - ./output:/usr/src/output
+
+volumes:
+  data:

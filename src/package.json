@@ -1,0 +1,17 @@
+{
+  "name": "stream-backpressure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:basicStream": "node ./basic-stream.js",
+    "start:concurrentStream": "node ./concurrent-stream.js",
+    "start:backPressure": "node ./stream-backpressure.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "csv": "^6.3.10",
+    "highland": "^2.13.5",
+    "through2-batch": "^1.1.1"
+  }
+}

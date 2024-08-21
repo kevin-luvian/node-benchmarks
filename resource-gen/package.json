@@ -1,0 +1,15 @@
+{
+  "name": "stream-backpressure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js"
+  },
+  "dependencies": {
+    "csv": "^6.3.10",
+    "through2-batch": "^1.1.1",
+    "@faker-js/faker": "^8.4.1"
+  }
+}
