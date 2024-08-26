@@ -39,7 +39,9 @@ class Batch extends Duplex {
     callback();
   }
   _final() {
-    this.internalBuffer = [];
+    if (this.internalBuffer.length > 0) {
+      this.push(this.internalBuffer);
+    }
     this.push(null);
   }
 }
