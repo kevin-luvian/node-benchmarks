@@ -8,10 +8,27 @@ services:
     volumes:
       - ./output:/usr/src/output
   stream-backpressure:
+    container_name: stream-backpressure
     mem_limit: 256m
     build:
       context: .
       dockerfile: Dockerfile.streamBackpressure
+    volumes:
+      - ./output:/usr/src/output
+  stream-backpressure-2:
+    container_name: stream-backpressure-2
+    mem_limit: 256m
+    build:
+      context: .
+      dockerfile: Dockerfile.streamBackpressure2
+    volumes:
+      - ./output:/usr/src/output
+  stream-backpressure-2-fixed:
+    container_name: stream-backpressure-2-fixed
+    mem_limit: 256m
+    build:
+      context: .
+      dockerfile: Dockerfile.streamBackpressure2Fixed
     volumes:
       - ./output:/usr/src/output
   basic-stream:

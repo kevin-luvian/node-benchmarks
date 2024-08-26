@@ -1,3 +1,14 @@
+const { faker } = require("@faker-js/faker");
+
+const mockData = (count = 0) => ({
+  no: count,
+  name: faker.person.fullName(),
+  birthday: faker.date.birthdate(),
+  uuid: faker.string.uuid(),
+  description: faker.lorem.paragraphs(3),
+  date: faker.date.anytime().toString(),
+});
+
 /**
  * @param {number} d
  * @return {string}
@@ -27,4 +38,4 @@ const highlandToPromise = (stream) => {
   });
 };
 
-module.exports = { msToHms,highlandToPromise };
+module.exports = { mockData, msToHms, highlandToPromise };
